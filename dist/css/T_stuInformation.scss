@@ -1,0 +1,120 @@
+@media (min-width: 1400px) {
+    .container{
+        width: 1360px;
+    }
+}
+
+@media (min-width: 1900px){
+    .container {
+        width: 1850px;
+    }
+}
+
+@media (min-width: 1899px){
+    .container {
+        width: 1870px;
+    }
+}
+
+body{
+    background: #f0f0f0;
+}
+
+.active{
+    display: block!important;
+}
+
+.header{
+    width: 100%;
+    background-color: #0483d4;
+    height: 50px;
+    margin-bottom: 15px;
+    .header_container{
+        height: 50px;
+        .header_logo{
+            float: left;
+            height: 50px;
+            .logo_a{
+                display: block;
+                height: 20px;
+                line-height: 20px;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+        .header_return{
+            float: right;
+            height: 50px;
+            .return{
+                display: block;
+                height: 20px;
+                line-height: 20px;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.footer{
+    text-align: center;
+    color: #8099af;
+    margin: 15px;
+    padding-bottom: 15px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.innerContent{
+    padding: 20px;
+    background-color: #fff;
+    .content_top{
+        padding: 7px 15px ;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    
+
+    .main_content{
+        margin-top: 10px;
+        .family{
+            position: relative;
+            overflow-y: auto;
+
+            .ttt{
+                // min-width: 2000px;
+                // margin: auto;
+                /* 下面两句代码是合并单元格之间的距离 */
+                border-spacing: 0px;
+                overflow: auto;
+                border-collapse: collapse;
+
+                &>thead{
+                    border-bottom: 1px solid #4297d7;   
+                }
+                &>thead>tr,&>thead>tr>th{
+                   width: 600px;
+                   text-align: center; 
+                   background-color: #f9f9f9;
+                   color: #777;
+                   border-right: 1px solid #4297d7;
+                }
+                
+            }
+            .btn{
+                position: absolute;
+                bottom:0;
+                right: 0;
+                width: 100px;
+                height: 40px;
+                outline: none;
+            }
+        }
+        
+
+    }
+    
+}

@@ -1,0 +1,1 @@
+"use strict";var nav_li=$(".nav_li");nav_li.click(function(){$(this).addClass("active"),$(this).siblings().removeClass("active");var i=$(this).index();$(".main_content>div").eq(i).addClass("active").siblings().removeClass("active")});

@@ -1,0 +1,152 @@
+body{
+    background: #f0f0f0;
+    min-width: 1000px;
+}
+
+.header{
+    width: 100%;
+    background-color: #0483d4;
+    height: 50px;
+    margin-bottom: 15px;
+    .header_container{
+        height: 50px;
+        .header_logo{
+            float: left;
+            height: 50px;
+            .logo_a{
+                display: block;
+                height: 50px;
+                line-height: 20px;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+        .header_return{
+            float: right;
+            height: 50px;
+            .return{
+                display: block;
+                height: 50px;
+                line-height: 20px;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.footer{
+    text-align: center;
+    color: #8099af;
+    margin: 15px;
+    padding-bottom: 15px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.innerContent{
+    padding: 20px;
+    background-color: #fff;
+    width: 90%;
+    .content_top{
+        padding: 7px 15px ;
+        margin-bottom: 20px;
+
+            .student_id{
+                text-align: center;
+                width: 50%;
+                float: left;
+                &>span{
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #4f81af;
+                }
+            }
+            .student_number{
+                text-align: center;
+                width: 50%;
+                float: left;
+                &>span{
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #4f81af;
+                }
+            }
+        
+    }
+
+    .content_nav{
+        .nav_ul{
+            padding-left: 20px;
+            &>li>a{
+                color: #0483d4;
+            }
+            .active{
+                font-weight: 700;
+                color: #000;
+            }
+        }
+    }
+
+
+        
+    .content_form{
+        width: 100%;
+        padding: 20px;
+        .form_table{
+            border: 1px solid #000;
+            width: 80%;
+            margin: auto;
+            /* 下面两句代码是合并单元格之间的距离 */
+            border-spacing: 0px;
+            border-collapse: collapse;
+            text-align: center;
+            &>caption{
+                text-align: center;
+            }
+            td ,th{
+                border: 1px solid #000;
+                text-align: center;
+                width: 33%;
+                height: 50px;
+            }
+        }
+        
+    }
+
+    .family{
+        position: relative;
+        display: none;
+        &>table{
+            width: 100%;
+            margin: auto;
+            /* 下面两句代码是合并单元格之间的距离 */
+            border-spacing: 0px;
+            border-collapse: collapse;
+            &>thead{
+                border-bottom: 1px solid #4297d7;
+            }
+            &>thead>tr,&>thead>tr>th{
+                text-align: center; 
+                background-color: #f9f9f9;
+                color: #777;
+                border-right: 1px solid #4297d7;
+            }
+            
+        }
+        .btn{
+            position: absolute;
+            bottom:0;
+            right: 0;
+            width: 100px;
+            height: 40px;
+            outline: none;
+        }
+    }
+
+        
+    
+    
+}

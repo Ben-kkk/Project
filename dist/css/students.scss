@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+@media (min-width: 1400px) {
+    .container{
+        width: 1360px;
+    }
+}
+
+@media (min-width: 1900px){
+    .container {
+        width: 1850px;
+    }
+}
+
+@media (min-width: 1899px){
+    .container {
+        width: 1870px;
+    }
+}
+body{
+    background: #f0f0f0;
+}
+
+.header{
+    width: 100%;
+    height: 110px;
+    // position: fixed;
+    z-index: 11;
+    // top: 0;
+    .header_content{
+        height: 60px;
+        background-color: rgb(4, 131, 212);
+
+        .content_h1{
+            height: 55px;
+            line-height: 55px;
+            .content_a{
+                display: inline-block;
+                .content_img{
+                    width: 55px;
+                    height: 55px;
+                    padding: 5px;
+                    float: left;
+                }
+                .content_p{
+                    height: 55px;
+                    line-height: 55px;
+                    font-size: 24px;
+                    float: left;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .header_nav{
+        height: 50px;
+        background: #fff;
+        .nav_ul{
+            float: left;
+            .dropdown{
+                height: 50px;
+                font-size: 14px;
+                float: left;
+                .dropdown-toggle{
+                    padding: 15px;
+                }
+                .dropdown-menu{
+                    padding: 0;
+                    margin-top: 0;
+                    min-width: 120px;
+                    
+                }
+            }
+        }
+    }
+
+    // .header_nav{
+    //     width: 100%;
+    //     height: 50px;
+    //     .navbar{
+    //         height: 50px;
+    //         background: #fff;
+    //         .nav_ul{
+    //             // float: left;
+    //             .nav_li{
+    //                 height: 50px;
+    //                 font-size: 14px;
+    //                 float: left;
+    //                 .dropdown-toggle{
+    //                     padding: 15px;
+    //                 }
+    //                 .dropdown-menu{
+    //                     padding: 0;
+    //                     margin-top: 0;
+    //                     min-width: 120px;
+                        
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+// ********footer********
+.footer{
+    width: 100% ;
+    height: 40px;
+    padding:  10px 0;
+    // position: fixed;
+    // bottom: 0;
+    background-color: rgb(4, 131, 212);
+    &>p{
+        text-align: center;
+        color: #fff;
+    }
+}
+
+// ********content*******
+.content{
+    height: 755px;
+    // margin-top: 110px;
+    position: relative;
+    background-color: #fff;
+    padding-top: 60px;
+    .main_content{
+        width: 50px;
+        height: 50px;
+        background: yellow;
+    }
+}

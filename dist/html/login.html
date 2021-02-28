@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Document</title><link rel="stylesheet" href="../css/boostrap/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="../css/login.css"><link rel="stylesheet" href="../css/common/css/common.css"><script src="../js/ajax.js"></script><script src="../js/cookie.js"></script><script src="../js/gverify.js"></script></head><body><div class="box"><h3>广东海洋大学教学管理信息服务平台</h3><div class="small_box"><div class="image"><img src="../img/login_bg_pic.jpg" alt=""></div><div class="peripheral"><div class="login"><h3>用户登录</h3><form class="form-horizontal form_whole"><div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">账号</label><div class="col-sm-10"><input type="text" class="form-control username" id="inputEmail3" placeholder="账号"></div></div><div class="form-group"><label for="inputPassword3" class="col-sm-2 control-label">密码</label><div class="col-sm-10"><input type="password" class="form-control password" id="inputPassword3" placeholder="密码"></div></div><div class="form-group"><div class="col-sm-offset-2 col-sm-10"><div class="checkbox"><label><input type="checkbox" class="avoid_login"> 七天免登录</label></div></div></div><div class="userObject"><input type="radio" id="student" name="object" checked=" "> <label for="student">学生</label> <input type="radio" id="teacher" name="object"> <label for="teacher">老师</label></div><div class="verify"><input type="text" class="ver_num"><div id="code"></div></div><div class="form-group"><div class="login_btn"><button type="submit" class="btn btn-default">登录</button></div></div></form></div></div></div></div><script>let username = document.querySelector('.username');
+        let password = document.querySelector('.password');
+        let btn = document.querySelector('.btn');
+        let form = document.querySelector(".form-horizontal");
+        let ver_num = document.querySelector('.ver_num');
+        
+        let userType = 'student';
+
+        let code = document.querySelector('#code');
+
+        let student = document.querySelector('#student');
+        let teacher = document.querySelector('#teacher');
+        let avoid_login = document.querySelector('.avoid_login');
+
+
+
+        let verify = new GVerify({
+                id: 'code'
+            })
+            console.log(verify.options.code);
+        student.onclick = function(){
+            student.setAttribute('checked','true');
+            teacher.removeAttribute('checked');
+            userType = this.id;
+        }
+        teacher.onclick = function () {
+            teacher.setAttribute('checked','true');
+            student.removeAttribute('checked');
+            userType = this.id;
+        }
+
+        
+        form.onsubmit = function(){
+            
+            let e = window.event;
+            e.preventDefault();
+            
+            let aa = ver_num.value.toLowerCase();
+            let bb = verify.options.code.toLowerCase()
+            if(aa != bb){
+                alert('验证码错误');
+                ver_num.value = null;
+                verify.refresh();
+                console.log(verify.options.code);
+                return
+            }
+            pAjax({
+                type:'post',
+                url: '../api/login.php',
+                data: {
+                    username: username.value,
+                    password: password.value,
+                    userType
+                }
+            }).then(res => {
+
+                res = JSON.parse(res);
+
+                if(res.code == 0){
+                    alert('账号或密码错误');
+                    ver_num.value = null;
+                    username.value = null;
+                    password.value = null;
+                    verify.refresh();
+                    console.log(verify.options.code);
+                    return
+                }
+
+                if (avoid_login.checked) {
+                    setCookie('login', username.value,604800);
+                }
+
+                setCookie('login', username.value,0);
+                if(res.code == 1){
+                    location.href = './studentsInterface.html';
+                }else if(res.code == 2){
+                    location.href = './teacher.html';
+                }
+                
+
+            })
+        }
+
+        let login = getCookie('login');
+        if (login) {
+            // localStorage.setItem('url', location.href);
+            // location.href = '../html/login.html';
+            console.log(1);
+        }</script><script src="../js/ajax.js"></script></body></html>

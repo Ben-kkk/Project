@@ -1,0 +1,244 @@
+@media (min-width: 1400px) {
+    .container{
+        width: 1360px;
+    }
+}
+
+@media (min-width: 1900px){
+    .container {
+        width: 1850px;
+    }
+}
+
+@media (min-width: 1899px){
+    .container {
+        width: 1870px;
+    }
+}
+
+body{
+    background: #f0f0f0;
+    position: relative;
+}
+
+.active{
+    display: block!important;
+}
+
+.header{
+    width: 100%;
+    background-color: #0483d4;
+    height: 50px;
+    margin-bottom: 15px;
+    .header_container{
+        height: 50px;
+        .header_logo{
+            float: left;
+            height: 50px;
+            .logo_a{
+                display: block;
+                height: 20px;
+                line-height: 20px;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+        .return{
+            float: right;
+            height: 50px;
+            .return_a{
+                display: inline-block;
+                height: 20px;
+                line-height: 20px;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.footer{
+    text-align: center;
+    color: #8099af;
+    margin: 15px;
+    padding-bottom: 15px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.innerContent{
+    // height: 100px;
+    padding: 20px;
+    background-color: #fff;
+    .content_top{
+        padding: 7px 15px ;
+        margin-bottom: 20px;
+        .row{
+            .student_id{
+                text-align: center;
+                &>span{
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #4f81af;
+                }
+            }
+            .student_number{
+                text-align: center;
+                &>span{
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #4f81af;
+                }
+            }
+        }
+    }
+
+    .content_nav{
+        .nav_ul{
+            padding-left: 20px;
+            &>li>a{
+                color: #0483d4;
+            }
+            .active{
+                font-weight: 700;
+                color: #000;
+            }
+        }
+    }
+
+    .main_content{
+        margin-top: 10px;
+        .family{
+            position: relative;
+            display: none;
+            .form_table{
+                &>tbody>tr>td,
+                &>thead>tr>th,
+                &>tfoot>tr>th{
+                   text-align: center; 
+                }
+                .stu_num{
+                    cursor: pointer;
+                    &::after{
+                            content: "";
+                            display: inline-block;
+                            vertical-align: middle;
+                            border-right: 5px solid transparent;
+                            border-left: 5px solid transparent;
+                            border-bottom: 5px solid #f00;
+
+                    }
+                }
+                .dele,.alter{
+                    outline: none;
+                    background-color: #0483d4;
+                    color: #fff;
+                }
+                .checkbox{
+                    display: inline-block;
+                }
+            }
+            .btn_box{
+                // text-align: right;
+                margin-top: 50px;
+                .search{
+                    display: inline-block;
+                    &>input{
+                        height: 40px;
+                        border: 1px solid #8099af;
+                        padding-left: 10px;
+                        outline: none;
+                        float: left;
+                    }
+                    &>button{
+                        height: 40px;
+                        padding: 0 20px;
+                        outline: none;
+                        float: left;
+                    }
+                    .all{
+                        margin-left: 20px;
+                    }
+                }
+                .btn,.cancel{
+                    float: right;
+                    margin-right: 50px;
+                    width: 100px;
+                    height: 40px;
+                    outline: none;
+                }
+            }
+            
+        }
+
+        .statistics{
+            display: none;
+            &>div{
+                float: left;
+            }
+        }
+    }
+}
+
+
+.form_box{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(130, 126, 126, 0.45);
+    display: none;
+    &>form{
+        width: 600px;
+        height: 400px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 5px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -70%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        &>h2{
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            width: 100%;
+            background: #4169E1;
+            cursor: move;
+            /* 设置 h2的左上角 和右上角的 圆角 */
+            border-radius: 10px 10px 0px 0px;
+        }
+        &>p{
+            // width: 300px;
+            width: 100%;
+            margin-top: 10px;
+            &>label{
+                width: 40%;
+                float: left;
+                text-align: right;
+                height: 25px;
+            }
+             &>input,&>select{
+                height: 25px;
+                border: 1px solid #000;
+                padding-left: 10px;
+                outline: none;
+            }
+            
+        }
+        .form_btn>button{
+                width: 80px;
+                height: 30px;
+                background: royalblue;
+                border: 1px solid #4169E1;
+                color: #fff;        
+            }
+       
+    }
+}

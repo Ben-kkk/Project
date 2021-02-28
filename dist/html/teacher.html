@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Document</title><link rel="stylesheet" href="../css/boostrap/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="../css/common/css/common.css"><link rel="stylesheet" href="../css/teacher.min.css"></head><body><!-- header --><div class="header"><div class="header_content container"><div class="content_h1"><a href="" class="content_a clear_fix"><img class="content_img" src="../img/logo_jw_w.png" alt=""><p class="content_p">广东海洋大学教学管理信息服务平台</p></a></div></div><div class="header_nav container"><ul class="nav nav_ul"><li role="presentation" class="dropdown nav_li"><a id="drop1" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">学生成绩 <span class="caret"></span></a><ul class="dropdown-menu"><li class="menu_li"><a href="./T_scoreRecord.html">成绩录入</a></li></ul></li><!-- <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="./information.html" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        学生信息
+                    </a>
+                </li> --></ul></div></div><div class="container main_content">我是首页</div><!-- footer --><div class="footer"><p>版权所有O Copyright 1999 2021广东海洋大学广东省湛江市版本V-7.2.7</p></div><script>let menu = document.querySelector('.dropdown-menu')
+        let drop1 = document.querySelector('#drop1');
+        let body = document.querySelector('body');
+        let flag = false;
+
+        drop1.onmousedown = function () {
+            menu.style.display = 'none';
+        }
+
+        body.onclick = function(e){
+            if(e.target.id == 'drop1'){
+                if (flag == false) {
+                    menu.style.display = 'block';
+                    flag = true;
+                } else {
+                    menu.style.display = 'none';
+                    flag = false;
+                }
+            }
+            else{
+                menu.style.display = 'none';
+            }
+        }</script></body></html>
