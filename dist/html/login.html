@@ -68,9 +68,10 @@
 
                 if (avoid_login.checked) {
                     setCookie('login', username.value,604800);
+                }else{
+                    setCookie('login', username.value, 0);
                 }
 
-                setCookie('login', username.value,0);
                 if(res.code == 1){
                     location.href = './studentsInterface.html';
                 }else if(res.code == 2){
